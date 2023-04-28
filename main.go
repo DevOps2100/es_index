@@ -192,7 +192,7 @@ func main() {
 	c := cron.New()
 	fmt.Println("计划任务： ", Config.Deadline.CHECK_CROND)
 	c.AddFunc(Config.Deadline.CHECK_CROND, func() {
-		// Check_Index()
+		Check_Index()
 		Lg.Info("执行了计划任务")
 	})
 	c.Start()
