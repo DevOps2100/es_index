@@ -1,0 +1,55 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: es-index-fluentd-conf
+  namespace: ginweb
+data:
+  fluentd.conf: |
+    # ginweb
+    <match tests>
+        @type elasticsearch
+        enable_ruby true
+        host 172.19.16.6
+        port 30200
+        user elastic
+        password ydzsio321
+        scheme http
+        logstash_format true
+        logstash_prefix es-index
+        logstash_dateformat %Y-%m-%d
+        time_key_format "%Y-%m-%dT%H:%M:%S.%N%+08:00"
+        #time_key createTimeSecond
+        utc_index:false
+        type_name test
+        with_transporter_log true
+        @log_level info
+        ssl_verify false
+        emit_error_for_missing_id true
+        validate_client_version true
+        reconnect_on_error true
+        reload_on_failure true
+        <buffer>
+            @type file
+            path /kubernetes.system.buffer
+            flush_mode interval
+            retry_type exponential_backoff
+            flush_thread_count 2
+            flush_interval 10s
+            retry_forever true
+            retry_max_interval 30
+            chunk_limit_size 32M
+            queue_limit_length 50
+            overflow_action block
+        </buffer>
+    </match>
+    <source>
+      @type tail
+      path /app/logs/*.log
+      pos_file /app/es-index.logs.pos
+      format none
+      tag tests
+      read_from_head true
+      <parse>
+        @type none
+      </parse>
+    </source>
