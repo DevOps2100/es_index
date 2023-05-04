@@ -19,7 +19,7 @@ import (
 // 配置文件字段
 type Configuration struct {
 	ElasticSearch ElasticSearchType `mapstructure:"ElasticSearch",`
-	Deadline      DeadlineType      `mapstructure:"Dadline"`
+	Deadline      DeadlineType      `mapstructure:"Deadline"`
 	Log           LogType           `mapstructure:"Log"`
 }
 

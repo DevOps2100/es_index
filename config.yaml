@@ -1,5 +1,6 @@
 # es集群配置 适用于es7.0版本 更高版本可进行尝试
 ElasticSearch:
+  # 修改为实际接口地址后再启动服务，不支持热更新配置
   ES_CLIENT_HOST: "http://43.135.9.121:30200"
   # ES用户
   USERNAME: "elastic"

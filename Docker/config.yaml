@@ -1,0 +1,24 @@
+# es集群配置 适用于es7.0版本 更高版本可进行尝试
+ElasticSearch:
+  # 修改为实际接口地址后再启动服务，不支持热更新配置
+  ES_CLIENT_HOST: "http://43.135.9.121:30200"
+  # ES用户
+  USERNAME: "elastic"
+  # ES密码
+  PASSWORD: "ydzsio321"
+  # 获取索引接口路由
+  GETDATA_URL:  "/_cat/indices?v"
+  # 默认索引（排除）
+  DEFAULT_INDEX: ".geoip_databases,.apm-custom-link,.apm-agent-configuration,.security-7,.kibana_task_manager_7.17.3_001,.async-search,.kibana_7.17.3_001"
+
+# 时间配置
+Deadline:
+  # 单位(天)
+  DETELINE: 3
+  # 检查周期:  秒 分 时 日 月 周
+  CHECK_CROND: "* * */23 * * *"
+
+# 日志配置
+Log:
+  # FilePath: "/Users/alinx/code/golang/es_drop/"
+  FilePath: "/app/logs/"
