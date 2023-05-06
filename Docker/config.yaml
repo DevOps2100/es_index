@@ -1,11 +1,11 @@
 # es集群配置 适用于es7.0版本 更高版本可进行尝试
 ElasticSearch:
   # 修改为实际接口地址后再启动服务，不支持热更新配置
-  ES_CLIENT_HOST: "http://43.135.9.121:30200"
+  ES_CLIENT_HOST: "http://xx.xx.xx.xx.:30200"
   # ES用户
   USERNAME: "elastic"
   # ES密码
-  PASSWORD: "ydzsio321"
+  PASSWORD: "xxxxxxx"
   # 获取索引接口路由
   GETDATA_URL:  "/_cat/indices?v"
   # 默认索引（排除）
