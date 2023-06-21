@@ -38,7 +38,7 @@ type ElasticSearchType struct {
 
 type DeadlineType struct {
 	// 日志过期时间
-	DETELINE    int64  `mapstructure:"DETELINEX"`
+	DETELINE    int64  `mapstructure:"DETELINE"`
 	CHECK_CROND string `mapstructure:"CHECK_CROND"`
 }
 
