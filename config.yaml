@@ -5,7 +5,7 @@ ElasticSearch:
   # ES用户
   USERNAME: "elastic"
   # ES密码
-  PASSWORD: "ydzsio321"
+  PASSWORD: "123"
   # 获取索引接口路由
   GETDATA_URL:  "/_cat/indices?v"
   # 默认索引（排除）
